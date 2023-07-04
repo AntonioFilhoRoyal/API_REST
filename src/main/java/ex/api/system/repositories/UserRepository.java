@@ -5,7 +5,8 @@ import org.springframework.stereotype.Repository;
 
 import ex.api.system.domain.User;
 
-@Repository
+// DEFININDO QUE A CLASS É UM RESPOSITORIO
+@Repository						// UMA EXTENSÃO DO MONGOREPOSITORY<TIPO DA CLASS, TIPO DO ID>
 public interface UserRepository extends MongoRepository<User, String>{
 
 }

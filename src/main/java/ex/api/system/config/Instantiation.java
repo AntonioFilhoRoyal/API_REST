@@ -26,20 +26,24 @@ public class Instantiation implements CommandLineRunner{
 	
 	@Override
 	public void run(String... args) throws Exception {
-
+		//DELETENADO TUDO ANTES DE ADICIONA E RODAR O SISTEMA
 		userRepository.deleteAll();
 		postRepository.deleteAll();
 		
+		// FORMATAÇÃO DA DATA
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
 		
 		userRepository.deleteAll();
 		
+// CRIANDO USERS PARA TESTAR O SISTEMA		
 		User maria = new User(null, "Maria Brown", "maria@gmail.com");
 		User alex = new User(null, "Alex Green", "alex@gmail.com");
 		User bob = new User(null, "Bob Grey", "bob@gmail.com");
 		
-		userRepository.saveAll(Arrays.asList(maria, alex, bob));
+		userRepository.saveAll(Arrays.asList(maria, alex, bob)); // SALVANDO VARIAS INSTANCIAS DE USERS
+// AO USA SAVELL PASSANDO UM ARRAYS.ASLIST, A LINHA DE CODIGO SALVA TODOS OS USERS PASSADO DENTRO DELE
+		// SEM PRECISA SALVA UM POR UM
 		
 		Post p1 = new Post(null, sdf.parse("10/05/2022"),"Bom dia", "Acordei feliz hoje!", new AuthorDTO(alex));
 		Post p2 = new Post(null, sdf.parse("21/10/2023"),"Estudo", "Estudei Jenkis hoje", new AuthorDTO(maria));

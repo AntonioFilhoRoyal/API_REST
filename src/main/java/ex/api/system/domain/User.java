@@ -9,10 +9,13 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+	// USUARIO
+// DEFININDO UMA COLEÇÃO COM NOME DE "USER"
 @Document(collection = "user")
 public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
 
+	// DEFININDO ID
 	@Id
 	private String id;
 	private String name;

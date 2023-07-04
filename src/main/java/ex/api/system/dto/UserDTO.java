@@ -2,6 +2,16 @@ package ex.api.system.dto;
 
 import ex.api.system.domain.User;
 
+	/*
+	 	MASCARANDO OS DADOS DO USERS
+	 	OTIMIZA A UTILIZAÇÃO DO SISTEMA
+	 	ESCONDE INFORMAÇÕES IMPORTANTES QUE SO DEVEM SE VISTA POR PESSOAS AUTORIZADAS
+	 	FAZ UMA COPIA DE USERS PARA MELHORA O DESENVOLVIMENTO E NAO PUXA DIRETAMENTE DO USER, FAZENDO ASSIM A SEGURANÇA
+	 	E A MELHORA DO CODIGO
+	  */
+
+		// AQUI ELE PROTEGE A SENHA, PUXANDO APENAS O ID, NAME E EMAIL
+	
 public class UserDTO {
 	
 	private String id;
@@ -11,8 +21,10 @@ public class UserDTO {
 	public UserDTO() {
 		
 	}
-	
+		// PASSANDO UM USER NO PARAMETRO
 	public UserDTO(User dto) {
+	// PUXANDO OS DADOS DE DENTRO DO USER
+		
 		id = dto.getId();
 		name = dto.getName();
 		email = dto.getEmail();
