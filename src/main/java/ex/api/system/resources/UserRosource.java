@@ -80,9 +80,10 @@ public class UserRosource {
 		return ResponseEntity.noContent().build(); // ATUALIZANDO E CRIANDO O NOVO BANCO DE DADOS DO DADO
 	}
 	
+// RETORNANDO POST RELACIONADOS AO ID DE USUARIO	
 	@GetMapping(value="/{id}/posts")
  	public ResponseEntity<List<Post>> findPosts(@PathVariable String id) {
-		User obj = userSevice.findById(id);
-		return ResponseEntity.ok().body(obj.getPost());
+		User obj = userSevice.findById(id); // PEGANDO ID
+		return ResponseEntity.ok().body(obj.getPost()); // ENTRANDO DENTRO DO USUARIO DO ID, PUXANDO OS POST RELACIONADOS A ELE
 	}
 }

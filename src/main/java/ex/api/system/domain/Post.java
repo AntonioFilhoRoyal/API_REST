@@ -21,8 +21,9 @@ public class Post implements Serializable{
 	private Date date;
 	private String title;
 	private String body;
-	private AuthorDTO author;
+	private AuthorDTO author; // PASSANDO O AUTHOR DA CLASS AUTHOR
 	
+	// LISTA DE COMENTARIOS
 	private List<CommentDTO> comments = new ArrayList<>();
 	
 	public Post() {

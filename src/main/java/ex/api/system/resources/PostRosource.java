@@ -31,14 +31,18 @@ public class PostRosource {
 		return ResponseEntity.ok().body(post);
 	}
 	
+// RETORNA O POST PELO TITULO	
 	@GetMapping(value = "/titlesearch")
+										// O PARAMETRO DE BUSCA É DO VALOR TEXTO, PASSANDO UM TIPO TEXTO
  	public ResponseEntity<List<Post>> findByTitle(@RequestParam(value="text", defaultValue="") String text) {
-		text = URL.decodeParam(text);
-		List<Post> list = postService.findByTitle(text);
-		return ResponseEntity.ok().body(list);
+					// AO PASSA O TIPO DO PARAMETRO DE NAVEGAÇÃO E O TIPO DO PARAMETRO, ELE E DECODIFICADO EM UTF-8
+		text = URL.decodeParam(text); // DECODIFICA O TEXTO DO PARAMETRO, ANALISA E FAZENDO A BUSCA DENTRO DOS POST
+		List<Post> list = postService.findByTitle(text); // RETORNA O POST COM TITULO DO PARAMETRO
+		return ResponseEntity.ok().body(list); // RETORNA A LISTA DE POST CASO HOUVE MAIS DE UM POST
 	}
 	
-	@GetMapping(value="/fullsearch")
+// PESQUISA TODO TIPO DE NAVEGAÇÃO DE UM POST, TITLE E DATE	
+	@GetMapping(value="/fullsearch") // CODIGO MAIS APROFUNDADO
  	public ResponseEntity<List<Post>> fullSearch(
  			@RequestParam(value="text", defaultValue="") String text,
  			@RequestParam(value="minDate", defaultValue="") String minDate,

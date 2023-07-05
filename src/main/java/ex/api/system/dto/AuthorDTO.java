@@ -10,6 +10,8 @@ public class AuthorDTO implements Serializable{
 	private String id;
 	private String name;
 	
+		// PROJEÇÃO DE DADOS, USADO NO POST E COMENTARIOS
+	
 	public AuthorDTO() {
 		
 	}

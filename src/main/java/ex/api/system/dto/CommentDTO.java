@@ -8,7 +8,7 @@ public class CommentDTO implements Serializable{
 	
 	private String text;
 	private Date date;
-	private AuthorDTO author;
+	private AuthorDTO author; // INTEGRANDO COMENTARIOS AO AUTOR DO POST
 	
 	public CommentDTO() {
 		super();
